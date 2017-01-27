@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.christianlangmann</groupId>
@@ -13,9 +11,15 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<mule.version>3.8.3</mule.version>
+		<mule.version>3.8.1</mule.version>
     	<mule.tools.version>1.2</mule.tools.version>
 	</properties>
+
+	<scm>
+		<url>scm:git:git://github.com/ChristianLangmann/unleash-test.git</url>
+		<connection>scm:git:https://github.com/ChristianLangmann/unleash-test.git</connection>
+		<tag>HEAD</tag>
+	</scm>
 
 	<build>
 		<plugins>
@@ -23,13 +27,13 @@
 			    <groupId>com.itemis.maven.plugins</groupId>
 			    <artifactId>unleash-maven-plugin</artifactId>
 			    <version>2.2.2</version>
-<!-- 				<dependencies> -->
-<!-- 					<dependency> -->
-<!-- 						<groupId>com.itemis.maven.plugins</groupId> -->
-<!-- 						<artifactId>unleash-scm-provider-svn</artifactId> -->
-<!-- 						<version>2.0.2</version> -->
-<!-- 					</dependency> -->
-<!-- 				</dependencies> -->
+				<dependencies>
+					<dependency>
+						<groupId>com.itemis.maven.plugins</groupId>
+						<artifactId>unleash-scm-provider-git</artifactId>
+						<version>2.0.2</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 	
 			<plugin>
@@ -72,14 +76,14 @@
 	<dependencies>
 		<!-- Xml configuration -->
 		<dependency>
-        	<groupId>com.mulesoft.muleesb</groupId>
+        	<groupId>org.mule</groupId>
 			<artifactId>mule-core</artifactId>
 			<version>${mule.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<!-- Xml configuration -->
 		<dependency>
-			<groupId>com.mulesoft.muleesb.modules</groupId>
+			<groupId>org.mule.modules</groupId>
 			<artifactId>mule-module-spring-config</artifactId>
 			<version>${mule.version}</version>
 			<scope>provided</scope>
@@ -94,18 +98,6 @@
 		<dependency>
 			<groupId>org.mule.transports</groupId>
 			<artifactId>mule-transport-http</artifactId>
-			<version>${mule.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-        	<groupId>com.mulesoft.muleesb.transports</groupId>
-			<artifactId>mule-transport-jdbc-ee</artifactId>
-			<version>${mule.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-        	<groupId>com.mulesoft.muleesb.transports</groupId>
-			<artifactId>mule-transport-jms-ee</artifactId>
 			<version>${mule.version}</version>
 			<scope>provided</scope>
 		</dependency>
